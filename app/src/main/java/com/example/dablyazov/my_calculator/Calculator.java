@@ -49,6 +49,11 @@ public class Calculator extends AppCompatActivity {
         clear();
         updateScreen();
     }
+    public void onClickBackSpace(View v){
+        if(display == "") return;
+        if(display != "") display = display.substring(0,display.length()-1);
+        updateScreen();
+    }
     private boolean isOperator(char op){
         switch (op){
             case '+':
@@ -115,7 +120,7 @@ public class Calculator extends AppCompatActivity {
         _screen.setText(display + "\n" + String.valueOf(result));
     }
 
-    
+
 
 
 
